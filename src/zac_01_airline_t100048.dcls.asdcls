@@ -1,0 +1,10 @@
+@EndUserText.label: 'CDS - Access control PFCG'
+@MappingRole: true
+define role ZAC_01_AIRLINE_T100048 {
+
+    grant select on
+    ZI_16_AIRLINE_T100048
+    where (CARRID) = aspect pfcg_auth(S_CARRID , carrid, actvt = '03')
+      and Currcode = 'EUR' ;
+                        
+}

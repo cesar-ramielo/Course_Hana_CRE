@@ -1,0 +1,7 @@
+@EndUserText.label: 'Access Control - Analisys TRACE'
+@MappingRole: true
+define role ZAC_05_AIRLINE_T100048 {
+    grant select on ZCDS_48_Airline_T100048
+    where ( Carrid ) = aspect pfcg_auth( Z_CARRIR_R, carrid, actvt = '03' )
+      and Currcode =  'EUR'  ;               
+}
